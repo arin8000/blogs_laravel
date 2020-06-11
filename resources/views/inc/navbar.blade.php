@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">{{config('app.name' , 'LSAPP')}}</a>
+            <a class="navbar-brand" href="/">{{config('app.name' , 'LSAPP')}}</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,6 +17,10 @@
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/services">Services</a></li>
+                <li><a href="/posts">Blog</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/posts/create">Create Post</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
