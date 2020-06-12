@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
@@ -10,6 +11,9 @@ class PagesController extends Controller
     {
         $title = 'Welcome to Laravel';
 //        return view('pages.index', compact('title'));
+        if (Auth::user()) {
+            return redirect('/posts');
+        }
         return view('pages.index')->with('title' , $title);
     }
 
