@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @if(!Auth::guest())
+        <a href="/posts/create" class="btn btn-primary pull-right">Create Post</a>
+    @endif
     <h1>Posts</h1>
     @if(count($posts) > 0)
         @foreach($posts as $post)

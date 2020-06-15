@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <a href="/posts" class="btn btn-default pull-right">Go Back</a>
     <h1>Create Post</h1>
     {!! Form::open(['action' => 'PostsController@store' , 'method' => 'POST' , 'enctype' => 'multipart/form-data']) !!}
         <div class="form-group">
