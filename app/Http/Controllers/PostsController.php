@@ -95,6 +95,9 @@ class PostsController extends Controller
      */
     public function show($id)
     {
+        if(auth()->user() == null) {
+            return redirect('/')->with('error' , 'User not logged in');
+        }
         $post = Post::find($id);
         return view('posts.show')->with('post' , $post);
     }

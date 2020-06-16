@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@if($post)
     <a href="/posts" class="btn btn-default">Go Back</a>
     <h1>{{ $post->title }}</h1>
     <img style="width:20%" src="/storage/cover_images/{{$post->cover_image}}">
@@ -21,4 +22,7 @@
             {!! Form::close() !!}
         @endif
     @endif
+@else
+    <h1>Post Not Found!</h1>
+@endif
 @endsection
