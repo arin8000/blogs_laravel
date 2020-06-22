@@ -9,7 +9,7 @@ class PagesController extends Controller
 {
     public function index()
     {
-        $title = 'Welcome to Laravel';
+        $title = 'Blogs by Laravel';
 //        return view('pages.index', compact('title'));
         if (Auth::user()) {
             return redirect('/posts');

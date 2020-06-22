@@ -32,6 +32,9 @@ class PostsController extends Controller
         // you can also use query
 //        $posts = DB::select('SELECT * FROM posts');
 //        $posts = Post::orderBy('title', 'desc')->get();
+        if(auth()->user() == null) {
+            return redirect('/')->with('error' , 'User not logged in');
+        }
         $posts = Post::orderBy('created_at', 'desc')->paginate(10);
         return view('posts.index')->with('posts' , $posts);
     }
