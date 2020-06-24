@@ -9,12 +9,16 @@ class PagesController extends Controller
 {
     public function index()
     {
-        $title = 'Blogs by Laravel';
+        $title = "Blogs";
+        $span = "Powered by Laravel";
 //        return view('pages.index', compact('title'));
         if (Auth::user()) {
             return redirect('/posts');
         }
-        return view('pages.index')->with('title' , $title);
+        return view('pages.index')->with([
+            'title' => $title,
+            'span'  => $span
+        ]);
     }
 
     public function about()
